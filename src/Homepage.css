@@ -1,0 +1,561 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.LocationDiv1 {
+    display: inline-block;
+    /* padding-right: 0%; */
+
+}
+
+.progressBarDiv {
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+}
+
+.LocationDiv {
+    float: right;
+    display: inline-block;
+    /* border: 1px solid red; */
+    /* padding: 1rem 1rem; */
+    /* vertical-align: middle; */
+    /* display: block;
+    height: 20px;
+    background-color: gold;
+    display: flex;
+    justify-content: flex-end; */
+    /* justify-content: flex-end; */
+
+}
+
+.mainLogo {
+    /* border: 1px solid black; */
+    /* margin: 1rem; */
+    /* padding: 2rem 2rem; */
+    /* text-align: center; */
+    /* display: row; */
+}
+
+.LocationName {
+    display: block;
+    /* right: 0; */
+    /* float: right; */
+    text-transform: uppercase;
+    /* padding: 10px; */
+    /* height: 25px; */
+    background-color: paleturquoise;
+    /* padding: 5px; */
+    /* margin-right: 20px; */
+    color: #00A699;
+    font-weight: bold;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.homeNavbar {
+    position: sticky;
+    height: 50px;
+    width: 100%;
+    /* background-color: cyan; */
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 10px; */
+    padding-top: 10px;
+}
+
+.header {
+    height: 80px;
+    width: 100%;
+    /* background-color: yellow; */
+}
+
+.form-inline {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.LabelName {
+    padding-right: 20px;
+    color: #00A699;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.barSearch {
+    color: #00A699 !important;
+    background-color: #BFE8E5;
+    border-color: #00A699;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.linkTag {
+
+    color: #00A699;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+
+.NavUl {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #00A699;
+    text-decoration: none;
+
+
+}
+
+.HomeBtn {
+    margin: 7px;
+}
+
+.NavRight {
+    margin: 7px;
+}
+
+.NavRight li {
+    padding: 2px;
+}
+
+.NotifBtn {
+    width: 25px;
+    height: 25px;
+}
+
+/* .SearchNav {
+    align-items: center;
+} */
+
+.form-inline {
+    margin: auto;
+}
+
+.historyDiv {
+    margin: 10rem 0;
+}
+
+.card-List-Progress {
+    margin: 10rem 0;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.nameOne {
+    cursor: default;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    /* margin: 10px 0; */
+    background-color: #00A699;
+}
+
+.card-container-Progress {
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 150px;
+    border-color: #00A699;
+    background-color: #00A699;
+    box-shadow: 0 3px 10px 0 #aaa;
+    border-style: solid;
+}
+
+.AddCardBtn {
+    margin: auto;
+    width: 100%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.bottom-left {
+    position: relative;
+    padding-top: 20px;
+    bottom: 0;
+    left: 0;
+    color: white;
+    text-decoration: none;
+    background-color: #00A699;
+}
+
+.bottom-left-time {
+    cursor: default;
+    pointer-events: none;
+    text-align: right;
+    position: relative;
+    padding-top: 15px;
+    bottom: 0;
+    left: 0;
+    color: white;
+    text-decoration: none;
+    background-color: #00A699;
+    z-index: 1;
+}
+
+
+.card-container-Swapped {
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 150px;
+    background-color: #E28B3A;
+    border-color: #E28B3A;
+    box-shadow: 0 3px 10px 0 #aaa;
+    border-style: solid;
+
+}
+
+/* cursor: default;
+pointer-events: none; */
+
+.nameOne-Swapped {
+    cursor: default;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    /* margin: 10px; */
+    background-color: #E28B3A;
+}
+
+.bottom-left-Swapped {
+    position: relative;
+    padding-top: 20px;
+    bottom: 0;
+    text-align: left;
+    text-decoration: underline;
+    background-color: #E28B3A;
+}
+
+.swapped-Content {
+    cursor: default;
+    pointer-events: none;
+    padding-left: 10px;
+    border-radius: 15px;
+    background-color: #DBA879;
+    padding-right: 10px;
+    color: white;
+}
+
+.progress-Content {
+    cursor: default;
+    pointer-events: none;
+    padding-left: 10px;
+    border-radius: 15px;
+    background-color: #54B8B0;
+    padding-right: 10px;
+    color: white;
+}
+
+.card-container-API-Add {
+    border-color: white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 150px;
+    background-color: white;
+    background-color: white;
+    box-shadow: 0 3px 10px 0 #aaa;
+    border-style: solid;
+}
+
+.card-container-API {
+    border-color: #366DAD;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 150px;
+    background-color: #4875B8;
+    background-color: #4875B8;
+    box-shadow: 0 3px 10px 0 #aaa;
+    border-style: solid;
+}
+
+.nameOne-API {
+    cursor: default;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    /* margin: 10px; */
+    background-color: #4875B8;
+}
+
+.API-Content {
+    cursor: default;
+    pointer-events: none;
+    padding-left: 10px;
+    border-radius: 15px;
+    background-color: #7495BC;
+    padding-right: 10px;
+    color: white
+}
+
+.bottom-left-API {
+    position: relative;
+    padding-top: 20px;
+    bottom: 0;
+    left: 0;
+    text-decoration: underline;
+    background-color: #4875B8;
+}
+
+.lnkAPI-Prog {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: #00A699;
+    border-color: white;
+    padding: 10px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 2px #666; */
+    transform: translateY(4px);
+}
+
+.sTagApi {
+    cursor: default;
+    pointer-events: none;
+    /* display: block; */
+    background-color: #4875B8;
+    color: #fff;
+    padding-left: 100px;
+    text-align: right;
+    font-size: 10px;
+    /* float: right; */
+
+}
+
+.sTagSwap {
+    cursor: default;
+    pointer-events: none;
+    /* display: block; */
+    background-color: #E28B3A;
+    color: #fff;
+    padding-left: 80px;
+    text-align: right;
+    font-size: 10px;
+    /* float: right; */
+
+}
+
+.sTagProc {
+    cursor: default;
+    pointer-events: none;
+    /* display: block; */
+    background-color: #00A699;
+    color: #fff;
+    padding-left: 60px;
+    text-align: right;
+    font-size: 10px;
+    /* float: right; */
+
+}
+
+.lnkAPI-Api {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: #4875B8;
+    border-color: white;
+    padding: 10px;
+    /* box-shadow: 0 2px #666; */
+    transform: translateY(4px);
+}
+
+.lnkAPI-SWP {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: #E28B3A;
+    border-color: white;
+    padding: 10px;
+    /* box-shadow: 0 2px #666; */
+    transform: translateY(4px);
+}
+
+.lnkAPI:hover {
+    background-color: black;
+}
+
+.btnID {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.NewOT {
+    color: #00A699;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.NewOT {
+    font-size: 150%;
+    color: #00A699;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.NewOTC {
+    background-color: #bfe8e5;
+    padding: 5px;
+    /* border: 2px solid black; */
+}
+
+.dataResult {
+    margin-top: 5px;
+    width: 300px;
+    height: 200px;
+    /* background-color: #bfe8e5; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.dataItem {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.dataItem:hover {
+    background-color: lightgrey;
+}
+
+.cardPage {
+    overflow: hidden;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.card-addButton {
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 150px;
+    background-color: White;
+    border-style: solid;
+    border-color: White;
+    box-shadow: 0 0 10px;
+    /* box-shadow: 0 3px 10px 0 #aaa; */
+}
+
+.OrderLink {
+    text-decoration: none;
+    background-color: #4875B8;
+    /* color: #fff; */
+    text-align: center;
+    display: block;
+    margin: auto;
+    /* margin-right: auto; */
+
+}
+
+.svg_icons {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(1.8);
+}
+
+.logoImg {
+    top: 0;
+    /* display: block; */
+    /* z-index: 1; */
+    float: left;
+    position: relative;
+    /* margin: 10px 15px 15px 10px; */
+    height: 40px;
+}
+
+.OT {
+    color: #00A699;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.OTID {
+    text-align: left;
+    /* float: left; */
+    color: #00A699;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.OST {
+    color: #00A699;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.Srhbtn {
+    /* right: 0; */
+    background-color: #00A699;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.LinkActive {
+    background-color: #00A699;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.notifications .icon .count {
+    height: 17px;
+    width: 17px;
+    max-width: 17px;
+    min-height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    font-size: 10px;
+    border-radius: 50%;
+    background-color: red !important;
+    font-weight: 400;
+    color: white;
+}
+
+.notifications .container {
+    border: 1px solid rgba(100, 100, 100, 0.4);
+    width: 30px;
+    font-size: 12px;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 25%);
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+}

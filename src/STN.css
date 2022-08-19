@@ -1,0 +1,30 @@
+.STNdiv {
+    /* background-color: mediumspringgreen; */
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.STNFrom {
+    /* background-color: blue; */
+    height: 70px;
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.STNFromText {
+    height: 20px;
+}
+
+
+.firstFormCheck2 {
+    margin-top: 10px;
+}
+
+.form-check2 {
+    /* background-color: blueviolet; */
+    height: 40px;
+    /* margin-top: 10px; */
+}

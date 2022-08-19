@@ -1,0 +1,179 @@
+.CardHolder {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+
+.NewEntryCardContainer1 {
+    /* background-color: yellow; */
+    height: 280px;
+    width: 330px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.NewEntryCardContainer {
+    /* background-color: yellow; */
+    height: 250px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.DropdownDiv1 {
+    /* background-color: blueviolet; */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.DropdownDiv12 {
+    /* background-color: blueviolet; */
+    /* height: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.EnterID {
+    /* background-color: brown; */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.IDInput {
+    border: 2px solid #00A699;
+    border-radius: 5px;
+    width: 150px;
+
+}
+
+.DropdownDiv2 {
+    /* background-color: palevioletred; */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DropdownDiv29 {
+    /* background-color: palevioletred; */
+    padding-top: 2px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DropdownBtn {
+    background-color: rgb(84, 182, 182) !important;
+    color: black !important;
+    border: 2px solid #00A699 !important;
+    width: 150px !important;
+}
+
+.TimerAndCheckboxBg {
+    /* background-color: fuchsia; */
+    /* height: 400px; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TimerAndCheckboxContainer {
+
+    height: 400px;
+    width: 300px;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.HideUIContainer {
+    /* background-color: goldenrod; */
+}
+
+
+.accordion-button::after {
+    content: none;
+}
+
+
+
+.TimerDiv {
+    background-color: #00A699;
+    display: flex;
+    justify-content: center;
+
+    margin: auto;
+    width: 100%;
+    /* border: 3px solid green; */
+    padding: 10px;
+
+}
+
+input.TimerDiv,
+textarea {
+    background-color: #bfe8e5;
+}
+
+.drpSle {
+    background-color: #bfe8e5;
+}
+
+.TimerSpan {
+    background-color: #00A699;
+    color: white;
+}
+
+.Checklist {
+    /* background-color: palevioletred; */
+    height: 300px;
+}
+
+.CheckboxItem {
+    /* background-color: purple; */
+    height: 50px;
+}
+
+
+
+
+.form-check {
+    /* background-color: green; */
+    height: 60px;
+    margin-top: 10px;
+}
+
+.time-Label {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    border: 3px solid #008080;
+    padding: 10px;
+    background-color: #008080;
+}
+
+.form-check-input {
+    padding: 5px;
+}
+
+.form-check-label {
+    padding: 5px;
+}

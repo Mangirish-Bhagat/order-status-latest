@@ -1,0 +1,90 @@
+.TodaysOrdersCardContainer-HISTORY {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    /* padding: 30px; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    /* height: 350px; */
+}
+
+.TodaysOrdersCard-HISTORY {
+    width: 95%;
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #bfe8e5 !important;
+    padding: 20px
+        /* height: 150px; */
+}
+
+.TodaysOrdersDetails-HISTORY {
+    display: table;
+    background-color: white !important;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00A699;
+    padding: 10px;
+
+    /* text-align: center; */
+    /* margin: 10px 0; */
+    /* padding-left: 60px; */
+    /* background-color: #366DAD; */
+}
+
+.TodaysOrdersTag-HISTORY {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #bfe8e5;
+    color: #00A699;
+    display: inline-block;
+
+    /* text-align: center; */
+    /* padding-left: 60px; */
+}
+
+.TodaysOrdersTag2-HISTORY {
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #bfe8e5;
+    text-align: right;
+    color: #00A699;
+    display: inline-block;
+    /* padding-right: 60px; */
+}
+
+.TodaysOrdersDetails2-HISTORY {
+    text-align: right;
+    background-color: #bfe8e5;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00A699;
+    margin: 10px 0;
+    display: inline-block;
+
+    /* padding-right: 60px; */
+}
+
+.TodaysOrdersDetails2-HISTORY-time {
+    float: right;
+    background-color: #bfe8e5;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00A699;
+    /* padding: 10px; */
+    display: inline-block;
+
+    /* text-align: right; */
+    /* left: 100px; */
+    /* padding-right: 60px; */
+    /* margin: 10px 0 */
+}
+
+.HistTo {
+    background-color: #bfe8e5;
+    /* display: inline; */
+}

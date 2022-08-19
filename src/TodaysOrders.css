@@ -1,0 +1,110 @@
+.TodaysOrdersCardContainer {
+    display: flex;
+    flex-direction: row;
+    /* padding: 40px; */
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    /* height: 350px; */
+}
+
+.noOrders {
+    text-align: center;
+    color: #00A699;
+    font-weight: bold;
+    padding-top: 60px;
+}
+
+.TodaysOrdersCard {
+    width: 95%;
+    margin: 20px;
+    border-radius: 30px;
+    /* height: 150px; */
+    background-color: #00A699 !important;
+    padding: 20px
+}
+
+.TodaysOrdersDetails {
+    display: table;
+    background-color: #54B8B0 !important;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+
+    /* text-align: center; */
+    /* background-color: #00A699;
+    font-size: 18px;
+    color: white;
+    margin: 10px 0;
+    padding-left: 60px; */
+    /* background-color: #366DAD; */
+}
+
+.TodaysOrdersTag {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #00A699;
+    color: #bfe8e5 !important;
+    display: inline-block;
+
+    /* text-transform: uppercase;
+    background-color: #00A699; */
+    /* text-align: center; */
+    /* padding-left: 60px;
+    color: white;
+    font-weight: bold; */
+
+}
+
+.TodaysOrdersTag2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #00A699;
+    text-align: right;
+    padding-right: 60px;
+    color: white;
+}
+
+.TodaysOrdersDetails2 {
+    float: right;
+    background-color: #00A699;
+    font-size: 18px;
+    font-weight: bold;
+    color: #bfe8e5;
+    padding: 10px;
+    display: inline-block;
+
+    /* text-align: right;
+    background-color: #00A699;
+    font-size: 18px;
+    color: white;
+    padding-right: 60px;
+    margin: 10px 0; */
+    /* background-color: #366DAD; */
+}
+
+.Tod {
+    background-color: #00A699;
+    /* display: inline; */
+}
+
+.clock {
+    background-color: #00A699;
+    margin-right: 10px;
+}
+
+.clock2 {
+    background-color: #bfe8e5;
+    margin-right: 10px;
+}
+
+.stWatch {
+    background-color: #00A699;
+    margin-right: 10px;
+}
