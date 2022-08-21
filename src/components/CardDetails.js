@@ -804,14 +804,25 @@ class CardDetails extends React.Component {
     render() {
         return (
             <>
-                <div className='LocationDiv'>
-                    <span className='LocationName'>{this.state.location}</span>
+                <div class="mainLogo">
+
+                    <div className='LocationDiv1'>
+                        <li><Link className="linkTag" to="/homepage"><img className='logoImg' src={"logo.jpg"}></img></Link></li>
+
+                    </div>
+
+                    <div className='LocationDiv'>
+                        <span className='LocationName'>{this.state.location}</span>
+                    </div>
+
                 </div>
+
+
                 <nav className='homeNavbar'>
                     <div className='HomeBtn'>
-                        <li>
+                        {/* <li>
                             <Link className="linkTag" to="/homepage"><img className='logoImg' src={"logo.jpg"}></img></Link>
-                        </li>
+                        </li> */}
 
                     </div>
                     <div className='NavRight'>
