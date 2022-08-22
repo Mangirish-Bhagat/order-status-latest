@@ -10,7 +10,7 @@ import ResetPassword from './components/ResetPassword';
 import { Route, Routes, useNavigate, BrowserRouter } from 'react-router-dom'
 import Error from './components/Error';
 import Homepage from './components/Homepage';
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import TodaysOrders from './components/TodaysOrders';
 import History from './components/History';
 import NewEntry from './components/NewEntry';
