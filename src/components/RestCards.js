@@ -14,11 +14,19 @@ class LoginComponent extends React.Component {
 
 
     state = {
+        showTimer: true,
         showNothing: true,
         progressForm: false,
         stnForm: false,
         swappedForm: false,
         stnProcess: false,
+        running: false,
+        showTimer: true,
+
+        hr: 0,
+        min: 0,
+        sec: 0,
+        msec: 0,
 
     }
 
@@ -49,6 +57,9 @@ class LoginComponent extends React.Component {
     }
 
     handleType = () => {
+
+
+
         console.log("Hello", this.state.ordertype)
         this.setState({ disabledType: "disabled" })
     }
@@ -282,23 +293,51 @@ class LoginComponent extends React.Component {
 
     }
 
+    pace = () => {
+        this.setState({ msec: this.state.msec + 10 });
+        if (this.state.msec >= 1000) {
+            this.setState({ sec: this.state.sec + 1 });
+            this.setState({ msec: 0 });
+        }
+        if (this.state.sec >= 60) {
+            this.setState({ min: this.state.min + 1 });
+            this.setState({ sec: 0 });
+        }
+    };
+
     handleStatus = () => {
-        console.log("Hello", this.state.orderStatus)
-        console.log("Hello", this.state.ordertype)
-        console.log("ID", this.state.cardID)
-        console.log("location", this.state.location)
 
-        var date = new Date();
-        var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
-        // var am_pm = date.getHours() >= 12 ? "PM" : "AM";
-        hours = hours < 10 ? "0" + hours : hours;
-        var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-        var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-        let time = hours + ":" + minutes + ":" + seconds + " ";
-        this.setState({ time: time });
+        if (this.state.orderStatus === "Swapped") {
+            this.setState({ showTimer: false });
+            console.log("Helllooo")
+        }
+        // console.log("Hello", this.state.orderStatus)
+        // console.log("Hello", this.state.ordertype)
+        // console.log("ID", this.state.orderIdNew)
+        // console.log("location", this.state.location)
+        if (!this.state.running && this.state.orderStatus != "Swapped") {
+            this.setState({ showTimer: true });
+            console.log("No Timer")
+            this.setState({ running: true });
+            this.watch = setInterval(() => this.pace(), 10);
+        }
 
-        // let timeDate = new Date('7/10/2013 20:12:34').toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
-        console.log("timeDate", time)
+        // console.log("Hello", this.state.orderStatus)
+        // console.log("Hello", this.state.ordertype)
+        // console.log("ID", this.state.cardID)
+        // console.log("location", this.state.location)
+
+        // var date = new Date();
+        // var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+        // // var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+        // hours = hours < 10 ? "0" + hours : hours;
+        // var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        // var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+        // let time = hours + ":" + minutes + ":" + seconds + " ";
+        // this.setState({ time: time });
+
+        // // let timeDate = new Date('7/10/2013 20:12:34').toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3");
+        // console.log("timeDate", time)
 
         if (this.state.orderStatus === "in-progress") {
             this.setState({ showNothing: false })
@@ -478,11 +517,17 @@ class LoginComponent extends React.Component {
                     </div>
                 </div>
 
-                <div className='TimerDiv'>
-                    <span className="TimerSpan">
-                        {this.state.time}
-                    </span>
-                </div>
+                {this.state.showTimer ? (
+                    <div className='TimerDiv'>
+                        <span className="TimerSpan">{this.state.hr} : {this.state.min} : {this.state.sec} : {this.state.msec}</span>
+                    </div>
+                ) : (
+                    <div className='TimerDiv'>
+                        {/* <span className="TimerSpan">{this.state.hr} : {this.state.min} : {this.state.sec} : {this.state.msec}</span> */}
+                    </div>
+                )
+                }
+
 
                 <div className='TimerAndCheckboxBg'>
                     {this.state.showNothing ? (

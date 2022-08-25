@@ -217,10 +217,20 @@ class HomeScreen extends React.Component {
 
     notifConver = () => {
         var orderText = "New Order Recived, Order ID: "
-        var dataNotification = this.state.notifData.map(s => ({
-            message: "New Order Received." + "Order ID: " + s.order_id, image:
-                "https://cutshort-data.s3.amazonaws.com/cloudfront/public/companies/5809d1d8af3059ed5b346ed1/logo-1615367026425-logo-v6.png"
-        }))
+        console.log("IDK", this.state.notifData[0].error_code)
+        if (this.state.notifData[0].error_code === 1) {
+            console.log("ZERO")
+            var dataNotification = this.state.notifData.map(s => ({
+                message: "No New Order Received.", image:
+                    "https://cutshort-data.s3.amazonaws.com/cloudfront/public/companies/5809d1d8af3059ed5b346ed1/logo-1615367026425-logo-v6.png"
+            }))
+        } else {
+            var dataNotification = this.state.notifData.map(s => ({
+                message: "New Order Received." + "Order ID: " + s.order_id, image:
+                    "https://cutshort-data.s3.amazonaws.com/cloudfront/public/companies/5809d1d8af3059ed5b346ed1/logo-1615367026425-logo-v6.png"
+            }))
+        }
+
         let dataNotification1 = [];
         // dataNotification.forEach((element) => {
         //     dataNotification1 = element.conc;
@@ -418,7 +428,7 @@ class HomeScreen extends React.Component {
                             </ModalBody>
                             <ModalFooter>
                                 {/* <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-<Button color="secondary" onClick={toggle}>Cancel</Button> */}
+                                <Button color="secondary" onClick={toggle}>Cancel</Button> */}
                             </ModalFooter>
                         </Modal>
 

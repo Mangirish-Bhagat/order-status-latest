@@ -172,11 +172,11 @@ class TodaysOrder extends React.Component {
     }
 
     handleFilter = () => {
-        let filterID = this.state.orderToday.filter((value) => {
-            return value.message.includes(this.state.searchID)
-        })
-        console.log("filterID", filterID)
-        this.setState({ filterID: filterID })
+        // let filterID = this.state.orderToday.filter((value) => {
+        //     return value.message.includes(this.state.searchID)
+        // })
+        // console.log("filterID", filterID)
+        // this.setState({ filterID: filterID })
 
     }
 
