@@ -10,12 +10,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import AddIcon from '@material-ui/icons/Add';
 import { withRouter } from './Redirect';
+import ReactSearchBox from "react-search-box";
 // import { withRouter } from "react-router";
 
 
 class HomeScreen extends React.Component {
 
     state = {
+        searchArrayFinal: [],
+        searchArray1: [],
+        searchArray2: [],
+        searchArray3: [],
         filteredData: [],
         searchArray: [],
         showSwapped: false,
@@ -71,6 +76,7 @@ class HomeScreen extends React.Component {
     // navigate = () => useNavigate();
 
     handleFilter = () => {
+        console.log("SEARCH", this.state.searchID)
         // console.log("HELOOOOOOO", this.state.searchID)
         // let newFilter = this.state.APIListArray.filter((value) => {
         //     return value.order_id.includes(this.state.searchID)
@@ -128,13 +134,14 @@ class HomeScreen extends React.Component {
                 this.setState({ APIListArray: response.data[0].api }, () => {
                     console.log("APIListArray: ", this.state.APIListArray)
 
-                    let searchArray = this.state.ProgressListArray.concat(this.state.swappedListArray, this.state.APIListArray);
-                    console.log("searchArray", searchArray)
+                    // let searchArray = this.state.ProgressListArray.concat(this.state.swappedListArray, this.state.APIListArray);
+                    // console.log("searchArray", searchArray)
 
 
                     setTimeout(() => {
                         this.notiFunction();
                         this.cardsAnimation();
+                        this.searchProgress();
                     }, 2000)
 
                 })
@@ -218,7 +225,7 @@ class HomeScreen extends React.Component {
     notifConver = () => {
         var orderText = "New Order Recived, Order ID: "
         console.log("IDK", this.state.notifData[0].error_code)
-        if (this.state.notifData[0].error_code === 1) {
+        if (this.state.notifData[0].error_code === "1") {
             console.log("ZERO")
             var dataNotification = this.state.notifData.map(s => ({
                 message: "No New Order Received.", image:
@@ -367,6 +374,72 @@ class HomeScreen extends React.Component {
         console.log("In-Progress",);
     }
 
+    searchProgress = () => {
+
+        if (this.state.ProgressListArray[0].error_code === "1") {
+            this.setState({ emptyProgress: 0 })
+            this.searchProgress1();
+
+        } else {
+
+            var searchArray1 = this.state.ProgressListArray.map((content) => ({ orderid: content.order_id, type: "Progress" }));
+            console.log("SearchArray", searchArray1)
+            this.setState({ emptyProgress: 1 })
+            this.setState({ searchArray1: searchArray1 })
+            this.searchProgress1();
+
+        }
+
+        // var searchArray1 = this.state.ProgressListArray.map((content) => ({ orderid: content.order_id, type: "Progress" }));
+        // console.log("SearchArray", searchArray1)
+        // this.searchProgress1();
+
+    }
+
+    searchProgress1 = () => {
+
+        if (this.state.swappedListArray[0].error_code === "1") {
+            console.log("HURRAYYYYY")
+            this.setState({ emptySwapped: 0 })
+            this.searchProgress2();
+
+        } else {
+            var searchArray2 = this.state.swappedListArray.map((content) => ({ orderid: content.order_id, type: "Swapped" }));
+            console.log("SearchArray", searchArray2)
+            this.setState({ emptySwapped: 1 })
+            this.setState({ searchArray2: searchArray2 })
+            this.searchProgress2();
+
+        }
+    }
+
+    searchProgress2 = () => {
+
+        if (this.state.APIListArray[0].error_code === "1") {
+            this.setState({ emptyAPI: 0 })
+            console.log("HURRAYYYYY")
+            // this.searchProgress3();
+
+        } else {
+            var searchArray3 = this.state.APIListArray.map((content) => ({ orderid: content.order_id, type: "API" }));
+            console.log("SearchArray", searchArray3)
+            this.setState({ emptyAPI: 1 })
+            this.setState({ searchArray3: searchArray3 })
+
+            // this.searchProgress2();
+
+        }
+
+        let searchArrayFinal = this.state.searchArray1.concat(this.state.searchArray2, this.state.searchArray3);
+        console.log("searchArrayFinal", searchArrayFinal)
+        this.setState({ searchArrayFinal: searchArrayFinal })
+    }
+
+    handleSearch = () => {
+        console.log("handleSearch");
+        console.log("handleSearch", this.state.clickedID)
+    }
+
     render() {
         return (
             // navbar 
@@ -445,8 +518,42 @@ class HomeScreen extends React.Component {
                                 <label className="LabelName">Order&nbsp;ID</label>
                                 <input
                                     onChange={(e) => this.setState({ searchID: e.target.value }, () => { this.handleFilter() })} className="barSearch" type="search" aria-label="Search" />
-                                {/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
-                                {this.state.filteredData.length != 0 && (
+
+
+                                {this.state.searchArrayFinal.length && this.state.searchArrayFinal.map((APIObj) =>
+                                    <button value={APIObj.orderid} onClick={(e) => console.log(e.target.value)}>
+                                        {APIObj.orderid}
+                                    </button>
+
+                                )}
+
+                                {/* <div>
+                                    <ul> */}
+
+
+                                {/* {this.state.searchArrayFinal.map((value) => {
+                                            return (
+
+                                                <div
+
+                                                    value={"name"}
+                                                    onClick={(e) => this.setState({ searchState: e.target.value }, () => { this.handleSearch() })}// onClick={(e) => this.setState({ searchOrderID: e.target.value.orderid, searchType: e.target.value.type }, () => { this.handleSearch() })}
+
+                                                // onClick={(e) => this.setState({ searchState: e.target.value }, () => { this.handleSearch() })}
+                                                // onClick={(e) => this.toggleEditing(valueA, valueB)}
+
+                                                // onClick={(e) => this.setState({ clickedID: e.target.value }, () => { this.routeChange1() })}// onClick={(e) => this.setState({ searchOrderID: e.target.value.orderid, searchType: e.target.value.type }, () => { this.handleSearch() })}
+                                                >{value.orderid}</div>
+
+                                            )
+                                        })} */}
+
+                                {/* </ul>
+
+
+
+                                </div> */}
+                                {/* {this.state.filteredData.length != 0 && (
                                     <div className="dataResult">
                                         {this.state.filterID.map((value, key) => {
                                             return (
@@ -454,7 +561,7 @@ class HomeScreen extends React.Component {
                                                     <p>{value.order_id}</p></a>)
                                         })}
                                     </div>
-                                )}
+                                )} */}
 
                                 {/* <button className="Srhbtn" onClick={this.searchClick}>search</button> */}
 
